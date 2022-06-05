@@ -1,0 +1,36 @@
+<?xml  version="1.0"?>  
+<odoo> 
+  <data> 
+    <record id="tree_todolist" model="ir.ui.view"> 
+      <field name="name">To-do Task Tree</field> 
+      <field name="model">todo.list</field> 
+      <field name="arch" type="xml"> 
+        <tree> 
+          <field name="customer_id"/> 
+          <field name="description"/> 
+          <field name="time"/>
+        </tree> 
+      </field> 
+    </record> 
+
+    <record id="form_todolist" model="ir.ui.view"> 
+      <field name="name">add To-do list</field> 
+      <field name="model">todo.list</field> 
+      <field name="arch" type="xml"> 
+        <tree> 
+          <field name="customer_id"/> 
+          <field name="description"/> 
+          <field name="time"/>
+        </tree> 
+      </field> 
+    </record> 
+
+    <act_window id="action_todo_task"
+      name="To-do Task"
+      res_model="todo.list"
+	  view_mode="tree,form" />
+    <menuitem  id="menu_todolist"  
+        name="Manage To do list"  
+        action="action_todo_task"  />  
+  </data>
+</odoo>

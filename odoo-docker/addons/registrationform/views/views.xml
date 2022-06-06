@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding='utf-8'?>
+<odoo>
+
+    <!-- view -->
+    <record id="view_registrations" model="ir.ui.view">
+        <field name="name">registration.form.form</field>
+        <field name="model">registration.form</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="first_name"/>
+                            <field name="last_name"/>
+                        </group>
+                        <group>
+                            <field name="gender"/>
+                            <field name="address"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+
+    </record>
+
+    <!-- Form action -->
+    <record id="registration_action" model="ir.actions.act_window">
+        <field name="name">Registration Form</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">registration.form</field>
+        <field name="view_mode">tree,kanban,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Register here!
+            </p>
+        </field>
+    </record>
+
+    <!-- Menu item-->
+    <menuitem id="form_root"
+        name="Forms"
+        sequence="10"/>
+
+    <menuitem id="regis_form"
+        name="Registration Form"
+        sequence="10"
+        parent="form_root"
+        action="registration_action" />
+
+</odoo>
